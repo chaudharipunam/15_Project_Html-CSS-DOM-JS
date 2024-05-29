@@ -1,0 +1,64 @@
+
+<!-- Create Counter -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        #Zero{
+            font-size: 70px;
+            margin: 0 0 10px 0;
+            font-weight: 900;
+        }
+        button{
+            border: 3px solid black;
+            font-weight: 800;
+            padding: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Counter</h1>
+        <p id="Zero">0</p>
+        <button id="decreBtn" onclick="decrement()">Decrease</button>
+        <button id="reset" onclick="reset()">Reset</button>
+        <button id="increBtn" onclick="increment()">Increase</button>
+    </center>
+         <script>
+            let value1 = 0;
+            function updateDisplay() {
+                document.getElementById("Zero").textContent = value1;
+                if(value1 >0){
+                   text=document.getElementById("Zero").style.color="green";
+                }
+                else if(value1<0){
+                   text=document.getElementById("Zero").style.color="red";
+                }
+                else{
+                   text=document.getElementById("Zero").style.color="black";
+                }
+            }
+    
+            function increment() {
+                value1++;
+                updateDisplay();
+            }
+
+            function decrement() {
+                value1--;
+                updateDisplay();
+            }
+    
+            function reset() {
+                value1 = 0;
+                updateDisplay();
+            }
+        </script>
+</body>
+</html>
+
+

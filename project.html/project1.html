@@ -1,0 +1,113 @@
+<!-- change BackGround Color  -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BackGround Color Change</title>
+    <style>
+        .navbar {
+            border-bottom: 1px solid black;
+            height: 50px;
+            display: flex;
+            justify-content: space-evenly;
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        .links {
+            display: flex;
+        }
+
+        li {
+            list-style-type: none;
+            margin: 20px 10px;
+        }
+
+        li:hover, p {
+            color: rgb(93, 201, 236);
+        }
+
+        .colorNameBox {
+            margin: 15% 0% 5% 0%;
+            height: 85px;
+            width: 500px;
+            background-color: black;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        #hexColor {
+            color: white;
+            font-size: 30px;
+            margin: 0 0 0 25px;
+            font-weight: 900;
+        }
+
+        h1 {
+            margin-left: 20px;
+        }
+
+        .colorNameBox:hover {
+            opacity: 0.5;
+            border: 5px solid rgb(49, 44, 44);
+        }
+
+        .clickBtn {
+            height: 30px;
+            width: 100px;
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            padding-top: 6px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .clickBtn:hover {
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <p>Color Flipper</p>
+        <div class="links">
+            <li><a href="simple.js"></a>Simple</li>
+            <li><a href="hexcolor.js"></a>Hex</li>
+        </div>
+    </div>
+    <center>
+        <div class="body-part">
+            <div class="colorNameBox">
+                <h1>BackGround Color : </h1>
+                <p id="hexColor">#f12025</p>
+            </div>
+            <div id="clickBtn">
+                Click me
+            </div>
+        </div>
+    </center>
+    <script>
+         const hexDigits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+         function getRandomHexColor() {
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+               color += hexDigits[Math.floor(Math.random() * hexDigits.length)];  //16
+            }
+            return color;
+         }
+         document.getElementById("clickBtn").addEventListener("click", function() {
+            let newColor = getRandomHexColor();
+            document.body.style.backgroundColor = newColor;
+            document.getElementById("hexColor").textContent = newColor;
+        });
+    </script>
+</body>
+</html>
+
+

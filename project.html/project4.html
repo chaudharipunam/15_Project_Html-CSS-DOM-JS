@@ -1,0 +1,125 @@
+<!-- screen wise content -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Size</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        nav{
+            height: 80px;
+            box-shadow: 5px 5px 15px 0px rgb(201, 199, 199);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        ul{
+            display: flex;
+            align-items: center;
+        }
+
+        li {
+            list-style-type: none;
+            margin: 10px 20px;
+        }
+
+        h1{
+            letter-spacing: 2px;
+        }
+
+        .icons{
+            margin: 25px;
+        }
+
+        i{
+            margin: 4px;
+        }
+
+        .menu-icon{
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: rgb(8, 170, 206);
+        }
+
+        a{
+            text-decoration: none;
+            color: rgb(116, 115, 115);
+            letter-spacing: 2px;
+            font-weight: 800;
+        }
+
+        .icons, span{
+            color: rgb(8, 170, 206);
+        }
+
+
+        @media (max-width: 768px){
+            .icons{
+                display: none;
+            }
+
+            ul{
+                display: none;
+            }
+
+            .menu-icon{
+                display: block;
+            }
+
+            nav.active ul{
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                right: 20px;
+                background: white;
+                box-shadow: 5px 5px 15px 0px rgb(201, 199, 199);
+                width: 200px;
+                padding: 20px;
+            }
+
+            nav.active li{
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Coding <span>Addict</span></h1>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-behance"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-solid fa-gem"></i>
+        </div>
+        <div class="menu-icon" id="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const nav = document.querySelector('nav');
+
+        menuIcon.addEventListener('click',() => {
+            if (nav.classList.contains("active")) {
+                nav.classList.remove('active');
+            } else {
+                nav.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

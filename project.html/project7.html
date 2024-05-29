@@ -1,0 +1,132 @@
+
+<!-- Show Answer in extend of question -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answer Extend of Question</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            background-color: rgb(236, 245, 250);
+            font-family: Arial, sans-serif;
+        }
+        .big_container {
+            margin: 10% 30%;
+            max-width: 600px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container1 {
+            max-width: 500px;
+            padding: 10px;
+            margin: 20px auto;
+            border: 1px solid #8d8c8c;
+            background-color: white;
+        }
+        .box1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #8d8c8c; /* Adds border bottom after the question and icon */
+        }
+        .que1 {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+        .icon {
+            font-size: 24px;
+        }
+        .answer {
+            display: none;
+            padding: 10px 0;
+        }
+        .answer.show {
+            display: block;
+        }
+        .Ans1 {
+            margin: 0;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="big_container">
+        <h1>General Questions</h1>
+        <div class="container1">
+            <div class="box1">
+                <p class="que1">Do you Accept All Major Credit Cards?</p>
+                <i class="fa-regular fa-square-plus icon" style="color: #d6c176;" data-state="plus"></i>
+            </div>
+            <div class="answer">
+                <p class="Ans1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem adipisci ducimus dicta iusto debitis saepe recusandae eaque placeat odit aspernatur inventore error quas nam provident a, reprehenderit voluptatem laudantium vero!
+                Nam veniam necessitatibus magnam nisi culpa nulla eius dolore blanditiis cupiditate ab, velit explicabo ut nemo iste ad ipsam. Aspernatur fugit excepturi facilis ex ab totam incidunt quod quaerat? Beatae.</p>
+            </div>
+        </div>
+        <div class="container1">
+            <div class="box1">
+                <p class="que1">Do you Support Local Farmers?</p>
+                <i class="fa-regular fa-square-plus icon" style="color: #d6c176;" data-state="plus"></i>
+            </div>
+            <div class="answer">
+                <p class="Ans1">Yes, we support local farmers by sourcing a significant portion of our ingredients from nearby farms.</p>
+            </div>
+        </div>
+        <div class="container1">
+            <div class="box1">
+                <p class="que1">Do you Use Organic Ingredients?</p>
+                <i class="fa-regular fa-square-plus icon" style="color: #d6c176;" data-state="plus"></i>
+            </div>
+            <div class="answer">
+                <p class="Ans1">We prioritize using organic ingredients whenever possible to ensure the highest quality and support sustainable farming practices.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const icons = document.querySelectorAll('.icon');
+        icons.forEach(icon => {
+            icon.addEventListener('click', () => {
+                const answer = icon.parentElement.nextElementSibling;
+                const currentState = icon.getAttribute('data-state');
+                document.querySelectorAll('.answer').forEach(ans => {
+                    if (ans !== answer) {
+                        ans.classList.remove('show');
+                        ans.style.display = 'none';
+                    }
+                });
+                document.querySelectorAll('.icon').forEach(ic => {
+                    if (ic !== icon) {
+                        ic.classList.remove('fa-square-minus');
+                        ic.classList.add('fa-square-plus');
+                        ic.setAttribute('data-state', 'plus');
+                    }
+                });
+                if (currentState === 'plus') {
+                    answer.classList.add('show');
+                    answer.style.display = 'block';
+                    icon.classList.remove('fa-square-plus');
+                    icon.classList.add('fa-square-minus');
+                    icon.setAttribute('data-state', 'minus');
+                } else {
+                    answer.classList.remove('show');
+                    answer.style.display = 'none';
+                    icon.classList.remove('fa-square-minus');
+                    icon.classList.add('fa-square-plus');
+                    icon.setAttribute('data-state', 'plus');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+

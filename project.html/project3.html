@@ -1,0 +1,219 @@
+<!-- Reveiews -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        .container1{
+            border: 1px solid black;
+            width: 50%;
+            padding: 20px;
+            box-shadow: 3px 3px 10px 0px;
+            margin: 3%;
+            height: 450px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .circle{
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background-color: rgb(54, 203, 244);
+        }
+
+        .Lady1{
+            border-radius: 50%;
+            position: absolute;
+            top: 30px;
+            left: 225px;
+            height: 200px;
+            width: 200px;
+        }
+
+        .quotes{
+            height: 30px;
+            width: 30px;
+            padding: 10px;
+            border-radius: 50%;
+            background-color: rgb(13, 171, 214);
+            position: absolute;
+            bottom: 78%;
+            left: 220px;
+            z-index: 2;
+        }
+
+        #icon1{
+            font-size: 27px;
+        }
+
+        h3{
+            margin-top: 30px;
+            letter-spacing: 2px;
+            margin-bottom: 0;
+        }
+
+        .colorText {
+            color: #17c9e9;
+            font-weight: 800;
+        }
+
+        p, .arrows, .colorText {
+            margin-top: 10px;
+        }
+
+        #btn {
+            margin-top: 10px;
+            padding: 5px;
+            background-color: #17c9e9;
+            width: 100px;
+            border-radius: 10px;
+            font-weight: 900;
+          
+        }
+
+        #icon3, #icon2{
+           margin: 20px 10px 0px 10px;
+           font-size: 25px;
+        }
+
+        .specific_box{
+            height: 350px;
+        }
+
+        .blue_line{
+            border: 2px solid #17c9e9;
+            width: 48px;
+            margin-left: 20px;
+        }
+
+        h1{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Our Reviews</h1>
+        <div class="blue_line"></div>
+        <div class="container1">
+             <div class="specific_box">
+                <div class="circle"></div>
+                <div class="quotes"><i class="fa-solid fa-quote-right" style="color: #f5f5f5;" id="icon1"></i></div>
+                <img src="../img/girl1.jpg" alt="lady1" class="Lady1">
+                <h3>Judit Pacsai</h3>
+                <span class="colorText">Front-end Developer</span>
+                <p>I was the kid who took apart the Rubik cube not to put it together solved but to see how it works. My thirst for knowledge led me to the tech industry and my passion for creating things has naturally pushed me to Front End where I found my love for code.</p>
+             </div>
+            <div class="arrows">
+               <i class="fa-solid fa-chevron-left" style="color: #74C0FC;" id="icon2"></i>
+               <i class="fa-solid fa-chevron-right" style="color: #74C0FC;" id="icon3"></i>
+            </div>
+        <div id="btn">Surprise Me</div>
+    </div>
+    </center>
+    <script>
+        const reviews = [
+            {
+                img: "../img/girl1.jpg",
+                name: "Judit Pacsai",
+                role: "Front-end Developer",
+                text: "I was the kid who took apart the Rubik cube not to put it together solved but to see how it works. My thirst for knowledge lead me to the tech industry and my passion for creating things has naturally pushed me to Front End where I found my love for code."
+            },
+            {
+                img: "../img/girl2.jpg",
+                name: "Joanna Otmianowska",
+                role: "Front-end engineer",
+                text: "I'm Joanna - a frontend developer who writes, does creative stuff, and tries to find balance between being a mum and having a hundred new ideas per minute. A few words about me..."
+            },
+            {
+                img: "../img/boy1.jpg",
+                name: "Beata Zalewa",
+                role: "Full-stack Developer | Mentor",
+                text: "I'm interested of contracts with full time work (the best option will be remote work). Rather I don't want relocate. I can go on a delegation from time to time. # More than 17-year background in C# and T-SQL developing."
+            },
+            {
+                img: "../img/girl3.jpg",
+                name: " Dani Roxberry",
+                role: "Python and Go Developer | Software architect",
+                text: "I'm a battle-tested software architect that expertly pairs real-time, data-driven architectures with stunning user experiences. Crafting code to delight users, win clients, and thrill investors is my passion; providing pixel perfect and standards compliant applications, my goal. Language agnostic and platform independent, I leverage over ten years of consulting experience to build custom software with your unique needs in mind."
+            },
+            {
+                img: "../img/boy2.jpg",
+                name: "Bill Gates",
+                role: "co-founding the software giant Microsoft",
+                text:"William Henry Gates III (born October 28, 1955) is an American businessman, investor, philanthropist, and writer best known for co-founding the software giant Microsoft, along with his childhood friend Paul Allen. During his career at Microsoft, Gates held the positions of chairman, chief executive officer (CEO), president."
+            },
+            {
+                img: "../img/girl4.jpg",
+                name: " Ania Pietras",
+                role: "Java programmer",
+                text:" Ania is a passionate Java programmer who is always keen to learn and grow her skills. She’s one of the authors’ behind kobietydokodu.pl, where she describes different aspects of working with Java and Spring and helps people make their first step to becoming programmers."
+            },
+            {
+                img: "../img/boy3.jpg",
+                name: "Linus Torvalds. ",
+                role: "Finnish-American software engineer",
+                text:" Linus Benedict Torvalds is a Finnish-American software engineer who is the creator and lead developer of the Linux kernel. He also created the distributed , Linus Benedict Torvalds is a Finnish-American software engineer who is the creator and lead developer of the Linux kernel. He also created the distributed version control system Git."
+            },
+            {
+                img: "../img/boy4.jpg",
+                name: "Joanna Otmianowska",
+                role: "Front-end engineer",
+                text: "I'm Joanna - a frontend developer who writes, does creative stuff, and tries to find balance between being a mum and having a hundred new ideas per minute. A few words about me..."
+            },
+            {
+                img: "../img/girl5.jpg",
+                name: "Beata Zalewa",
+                role: "Full-stack Developer | Mentor",
+                text: "I'm interested of contracts with full time work (the best option will be remote work). Rather I don't want relocate. I can go on a delegation from time to time. # More than 17-year background in C# and T-SQL developing."
+            },
+            {
+                img: "../img/girl7.jpg",
+                name: " Dani Roxberry",
+                role: "Python and Go Developer | Software architect",
+                text: "I'm a battle-tested software architect that expertly pairs real-time, data-driven architectures with stunning user experiences. Crafting code to delight users, win clients, and thrill investors is my passion; providing pixel perfect and standards compliant applications, my goal. Language agnostic and platform independent, I leverage over ten years of consulting experience to build custom software with your unique needs in mind."
+            },
+        ];
+        
+        let currentIndex = 0;
+    
+        function showReview(index) {
+            const review = reviews[index];
+            document.querySelector(".Lady1").src = review.img;
+            document.querySelector("h3").textContent = review.name;
+            document.querySelector(".colorText").textContent = review.role;
+            document.querySelector("p").textContent = review.text;
+        }
+    
+        document.getElementById("icon2").addEventListener("click", function() {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : reviews.length - 1;
+            showReview(currentIndex);
+        });
+    
+        document.getElementById("icon3").addEventListener("click", function() {
+            currentIndex = (currentIndex < reviews.length - 1) ? currentIndex + 1 : 0;
+            showReview(currentIndex);
+        });
+    
+        document.getElementById("btn").addEventListener("click", function() {
+            currentIndex = Math.floor(Math.random() * reviews.length);
+            showReview(currentIndex);
+        });
+    
+        window.onload = function() {
+            showReview(currentIndex);
+        };
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+

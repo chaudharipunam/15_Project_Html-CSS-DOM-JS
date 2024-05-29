@@ -1,0 +1,193 @@
+<!-- menu list -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin: 20px 0 5px 0;
+        }
+
+        .line {
+            border: 2px solid rgb(208, 148, 37);
+            width: 50px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            border: 2px solid rgb(208, 148, 37);
+            border-radius: 5px;
+            margin: 10px;
+            padding: 5px;
+            color: rgb(208, 148, 37);
+        }
+
+        .big_container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 1100px;
+            margin: 35px;
+        }
+
+        .dish {
+            display: flex;
+            width: 500px;
+            margin: 10px;
+        }
+
+        img {
+            width: 150px;
+            height: 100px;
+            border-radius: 5px;
+            border: 3px solid rgb(208, 148, 37);
+        }
+
+        .data_menu {
+            padding:  0px 20px 20px 20px;
+        }
+
+        .menu_name {
+            font-weight: 800;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+           
+        }
+
+        span {
+            color: rgb(208, 148, 37);
+            margin-left: 45px;
+        }
+
+        .menu_info {
+            color: #666;
+            text-align: left;
+        }
+
+        .bottom_line{
+            width: 90%;
+            border-bottom: 1px solid rgb(93, 91, 91);
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Our Menu</h1>
+        <div class="line"></div>
+        <button menu="all">All</button>
+        <button menu="street-food">Street Foods</button>
+        <button menu="drinks">Drinks</button>
+        <button menu="desserts">Desserts</button>
+
+        <div class="big_container">
+            <div class="dish" menu="street-food">
+                <img src="../img/menu1.webp" alt="menu1">
+                <div class="data_menu">
+                    <div class="bottom_line">
+                        <p class="menu_name">Bread Paratha <span>$ 15.99</span></p>
+                    </div>
+                    <p class="menu_info">Paratha is another style of unleavened, whole-wheat flatbread and a quintessential Indian food. Thicker and more substantial</p>
+                </div>
+            </div>
+
+            <div class="dish" menu="street-food">
+                <img src="../img/menu2.webp" alt="menu2" >
+                <div class="data_menu">
+                    <div class="bottom_line">
+                        <p class="menu_name">Samosa <span>$ 15.99</span></p>
+                    </div>
+                    <p class="menu_info">Arguably the most popular street food in India, samosas are fried or baked pastry pockets with a savory filling such as spiced potatoes</p>
+                </div>
+            </div>
+
+            <div class="dish" menu="drinks">
+                <img src="../img/menu8.webp" alt="menu3">
+                <div class="data_menu">
+                    <div class="bottom_line">
+                        <p class="menu_name">Lassi <span>$ 15.99</span></p>
+                    </div>
+                    <p class="menu_info">This refreshing beverage is the perfect addition to a spicy Indian meal.  on a hot day.</p>
+                </div>
+            </div>
+
+            <div class="dish" menu="desserts">
+                <img src="../img/menu5.webp" alt="menu4">
+                <div class="data_menu">
+                    <div class="bottom_line">
+                        <p class="menu_name">Ice-Cream <span>$ 15.99</span></p>
+                    </div>
+                    <p class="menu_info">Sometimes called traditional Indian ice cream, kulfi is a frozen dairy dessert that comes in a variety of flavors.</p>
+                </div>
+            </div>
+
+            <div class="dish" menu="street-food">
+                <img src="../img/menu3.webp" alt="menu5">
+                <div class="data_menu">
+                    <div class="bottom_line">
+                        <p class="menu_name">Sambar <span>$ 15.99</span></p>
+                    </div>
+                    <p class="menu_info">The South Indian lentil-based vegetable stew, sambar, is often cooked with pigeon peas and tamarind broth.</p>
+                </div>
+            </div>
+
+            <div class="dish" menu="desserts">
+                <img src="../img/menu7.webp" alt="menu6">
+                <div class="data_menu">
+                    <div class="bottom_line">
+                        <p class="menu_name">Barfi <span>$ 15.99</span></p>
+                    </div>
+                    <p class="menu_info">The base of this sweet Indian food is made up of just two ingredients: milk powder and sugar.</p>
+                </div>
+            </div>
+
+            <div class="dish" menu="street-food">
+                <img src="../img/menu4.webp" alt="menu7">
+                <div class="data_menu">
+                    <div class="bottom_line">
+                        <p class="menu_name">Pani Puri <span>$ 15.99</span></p>
+                    </div>
+                    <p class="menu_info">Pani puri is a unique Indian street food experience that goes by many names throughout the country depending on the region</p>
+                </div>
+            </div>
+
+            <div class="dish" menu="desserts">
+                <img src="../img/menu6.webp" alt="menu8">
+                <div class="data_menu">
+                    <div class="bottom_line">
+                        <p class="menu_name">Gulab Jamun <span>$ 15.99</span></p>
+                    </div>
+                    <p class="menu_info">Gulab jamun is a classic Indian dessert made from deep-fried milk solids, or khoya, which is milk that has been reduced to the consistency of a soft dough.</p>
+                </div>
+            </div>
+        </div>
+    </center>
+    <script>
+        const buttons = document.querySelectorAll('button[menu]');
+        const dishes = document.querySelectorAll('.dish');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.getAttribute('menu');
+                dishes.forEach(dish => {
+                    if (category === 'all' || dish.getAttribute('menu') === category) {
+                        dish.style.display = 'flex';
+                    } else {
+                        dish.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+

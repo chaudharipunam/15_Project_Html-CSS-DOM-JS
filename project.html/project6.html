@@ -1,0 +1,110 @@
+<!-- show modal box & mosel box error in middle -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Modal Error</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            background-image: url("../img/garden.jpg");
+            margin: 0% 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 45px;
+        }
+
+        .btn:hover {
+            background-color: white;
+            border: 4px solid rgb(91, 182, 243);
+            border-radius: 10px;
+        }
+
+        .model_error {
+            display: none;
+            position: absolute;
+            top: 34%;
+            left: 35%;  
+            height: 140px;
+            width: 350px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+           border: 2px solid black;
+        }
+
+        .middle_container {
+            height: 200px;
+            width: 400px;
+            background-color: white;
+            text-align: center;
+            padding-top: 25px;
+        }
+       
+        .btn {
+            background-color: rgb(91, 182, 243);
+            width: 150px;
+            padding: 7px;
+            font-weight: 900;
+            border-radius: 5px;
+            margin-left: 30%;
+        }
+
+        .back-transparent {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(168, 209, 241, 0.5);
+        }
+
+        h3 {
+            font-size: 35px;
+        }
+
+        #close-icon {
+            float: right;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="middle_container">
+        <h1>Project Model</h1>
+        <div class="btn" id="openmodal">OPEN MODEL</div>
+    </div>
+
+    <div class="back-transparent" id="background"></div>
+
+    <div class="model_error" id="modelerror">
+        <i class="fa-solid fa-xmark" style="color: #a50954;" id="close-icon"></i>
+        <h3>Modal Content</h3>
+    </div>
+
+    <script>
+        const openModalBtn = document.getElementById('openmodal');
+        const modalError = document.getElementById('modelerror');
+        const backGround = document.getElementById('background');
+        const closeIcon = document.getElementById('close-icon');
+
+        openModalBtn.addEventListener('click', () => {
+            modalError.style.display = 'block';
+            backGround.style.display = 'block';
+        });
+
+        closeIcon.addEventListener('click', () => {
+            modalError.style.display = 'none';
+            backGround.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
